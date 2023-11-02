@@ -1,12 +1,12 @@
-function removeColor(){
-	const select = document.querySelector("select");
-	const selectedValue = select.value;
-	let options = select.children;
-	for(let i=0; i<options.length; i=i+1)
-		{
-			if(options[i].value == selectedValue)
-			{
-				options[i].remove();
-				break;
-			}
-		}
+let select = document.getElementById("colorSelect");
+let btn =  document.querySelector("input[type=button]")
+btn.addEventListener("click", ()=>{       
+	//select.children--> will give all the child elements of select element
+    for (const child of select.children) {
+		//select.value--> will give value of the selected element
+        if(child.value === select.value){
+			//child.remove()-->remove the child element
+                child.remove();
+         }
+    }
+})
